@@ -1,0 +1,186 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #eee4e4;
+  background-size: cover;
+  font-family: sans-serif;
+}
+
+#wrapper {
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  font-size: 8em;
+  padding: 50px 0;
+}
+
+span {
+  text-shadow: -0.06em 0 #E0C1C1,  0.06em 0 #ABCCE0; /* This creates the 3D effect, pretty easy, eh? */
+  letter-spacing: 0.08em; /* make sure the letters don't overlap */
+}
+
+p {
+  margin: 0;
+}
+
+#stars span {
+  display: inline-block;
+  transform: scale(1);
+  transition: transform 2s cubic-bezier(0, 1, 0, 1);
+}
+#stars span:hover {
+  cursor: crosshair;
+  transform: scale(1.3); /* This adds a hover effect */
+  transition: transform .2s cubic-bezier(0, 0.75, 0, 1);
+}
+#stars span:active {
+  text-shadow: none; /* Click to disable the 3D effect */
+}
+
+/* Below the stars animation */
+#stars span:nth-child(1), #stars span:nth-child(5) { font-size: 0.3em; animation-delay: 0.2s; }
+#stars span:nth-child(2), #stars span:nth-child(4) { font-size: 0.5em; animation-delay: 0.1s; }
+#stars span:nth-child(3) { font-size: 0.8em; animation-delay: 0s; }
+
+#stars span { animation: stars-animation 3s 50 ease-in-out; }
+
+@-webkit-keyframes stars-animation {
+  0% { transform: scale(1); }
+  90% { transform: scale(1); }
+  95% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+#stars:hover span {
+  animation: none; /* Disables the animation on hover */
+}
+
+
+/* ---------------- Title ---------------- */
+
+#title {
+  font-family: Helvetica, Geneva, sans-serif; /* Any font would work, but SansSerif looks better */
+}
+#title:focus {
+  outline: none;
+}
+#title span {
+  vertical-align: middle;
+  line-height: 1.5em;
+  transition: font-size 2s cubic-bezier(0, 1, 0, 1);
+}
+#title span:hover {
+  font-size: 1.5em; /* This adds a hover effect */
+  line-height: 1em;
+  transition: font-size .2s cubic-bezier(0, 0.75, 0, 1);
+}
+#title span:active {
+  font-size: 1em;
+  text-shadow: none; /* Click to disable the 3D effect */
+}
+#title span::selection {
+  background-color: #ABCCE0; /* This hides the selection */
+}
+
+
+/* ---------------- Slogan ---------------- */
+
+#slogan { font-size: 0.25em; }
+#slogan span:active { text-shadow: none; }
+
+
+
+
+/* Below just some styling for the meta info */
+
+#meta {
+  color: #777;
+  font-size: 1.2em;
+  line-height: 1.6em;
+  text-align: center;
+  text-shadow: rgba(255,255,255,0.5) 0 1px 0;
+  margin: 30px;
+}
+#meta strong { font-weight: bold; color: #000; }
+#meta p:first-child { margin-bottom: 20px; }
+#meta a { text-decoration: none; color: #7276ff; }
+#meta a:hover { color: rgba(114,118,255,0.5); }
+#meta img { vertical-align: text-bottom; }
+
+
+.pie-pagina{
+  width: 100%;
+  background-color: rgb(2, 2, 43);
+}
+.pie-pagina .grupo-1{
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px;
+  padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.pie-pagina .grupo-1 .box figure img{
+  width: 250px;
+}
+
+.pie-pagina .grupo-1 .box h2{
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 20px;
+}
+
+.pie-pagina .grupo-1 .box p{
+  color: #efefef;
+  margin-bottom: 10px;
+}
+
+.pie-pagina .grupo-1 .red-social a{
+  display: inline-block;
+  text-decoration: none;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  color: white;
+  margin-right: 10px;
+  background-color: #0d2033;
+}
+
+.pie-pagina .grupo-2{
+  background-color: rgb(16, 5, 53);
+  padding: 15px 10px;
+  text-align: center;
+  color: #efff;
+}
+
+
+.pie-pagina .grupo-2 small{
+  font-size: 23px;
+}
+
+.pie-pagina .grupo-2 img{
+  width: 200px;
+  height: 200px;
+}
+
+@media screen and (max-width:800px){
+  .pie-pagina .grupo-1{
+    width: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 30px;
+    padding: 35px 0px;
+  }
+}
+
+

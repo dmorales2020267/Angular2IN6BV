@@ -1,0 +1,65 @@
+<!-- Modal -->
+<body>
+
+
+  <form class="text-center border border-light p-5">
+    <p class="h4 mb-4">Login </p>
+    <!-- Email -->
+    <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail" name="email" #email="ngModel"
+    [(ngModel)]="usuarioModel.email">
+    <!-- Password -->
+    <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="Password" name="password" #password="ngModel"
+    [(ngModel)]="usuarioModel.password">
+    <div class="d-flex justify-content-around">
+
+      <div>
+        <!-- Forgot password -->
+        <a href="">olvido su password?</a>
+      </div>
+    </div>
+    <!-- Sign in button -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" type="submit" (click)="login()">Iniciar Sesion</button>
+    <!-- Register -->
+    <p>
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Registrase
+      </button>
+    </p>
+  </form>
+
+
+
+
+
+
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel"> Registrarse</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+         <!-- nombre -->
+        <input  class="form-control" type="text" id="defaultLoginForName" class="form-control mb-4" placeholder="Nombres">
+         <!-- Apellido -->
+        <input  class="form-control" type="text" id="defaultLoginForLastNAme" class="form-control mb-4" placeholder="Apellidos">
+         <!-- Email -->
+        <input  class="form-control" type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="E-mail">
+         <!-- Password -->
+        <input  class="form-control" type="password" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Password">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">Registrarse</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</body>

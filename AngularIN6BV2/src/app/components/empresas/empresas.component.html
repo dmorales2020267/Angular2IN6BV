@@ -1,0 +1,54 @@
+<body>
+
+<div class="container">
+  <!-- Button activador Modal Agregar Empresa -->
+  <button id="boton" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarEmpresaModal">
+    Agregar Empresa
+  </button>
+
+  <div class="row">
+    <div class="col-12 col-md-4" *ngFor="let empre of empresasModelGet">
+      <div class="card border-success mb-3">
+        <div class="card-header bg-transparent border-success">{{ empre.nombre }}</div>
+        <div class="card-body text-success">
+          <p class="card-text">
+            {{empre.descripcion}}
+          </p>
+        </div>
+        <div class="card-footer bg-transparent border-success">Footer</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Agregar Empresa -->
+<div class="modal fade" id="agregarEmpresaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Agregar Empresa</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mg-3">
+            <label for="inputNombre" class="form-label">Nombre Empresa</label>
+            <input type="text" id="inputNombre" class="form-control" name="nombre" #nombre="ngModel"
+            [(ngModel)]="empresasModelPost.nombre">
+          </div>
+          <div class="mg-3">
+            <label for="inputDescripcion" class="form-label">Descripcion</label>
+            <input type="text" id="inputDescripcion" class="form-control" name="descripcion" #descripcion="ngModel"
+            [(ngModel)]="empresasModelPost.descripcion">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="postEmpresas()" >Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
